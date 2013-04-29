@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics2D", "Graphics2D\Graphics2D.vcxproj", "{5992F9A7-3CA8-4FF2-A939-D2B074297A0D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics_Test", "Graphics_Test\Graphics_Test.vcxproj", "{44C265B9-6AA4-4810-8671-A162AACE60E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5992F9A7-3CA8-4FF2-A939-D2B074297A0D} = {5992F9A7-3CA8-4FF2-A939-D2B074297A0D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
