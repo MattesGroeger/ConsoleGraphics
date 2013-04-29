@@ -20,12 +20,12 @@ int _tmain(int argc, _TCHAR* argv[])
 	// voll = 219
 	// top = 223
 	// bottom = 220
-
+	/*
 	for (int i = 32; i <= 254; i++)
 	{
 		printChar(i, i);
 	}
-
+	*/
 	system("pause");
 
 	return 0;
