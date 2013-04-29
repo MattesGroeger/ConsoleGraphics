@@ -12,8 +12,19 @@ void printChar(int index, char asci);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	ConsoleGraphics test;
+	ConsoleGraphics test(10, 10);
+
 	test.drawPoint(3, 4);
+	test.drawPoint(4, 4);
+	test.drawPoint(5, 4);
+
+	test.drawPoint(3, 5);
+	test.drawPoint(5, 5);
+
+	test.drawPoint(3, 6);
+	test.drawPoint(4, 6);
+	test.drawPoint(5, 6);
+
 	//ConsoleGraphics *test = new ConsoleGraphics();
 
 	// " " = 32
