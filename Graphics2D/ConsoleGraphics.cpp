@@ -24,6 +24,7 @@ ConsoleGraphics::ConsoleGraphics(int width, int height)
 
 ConsoleGraphics::~ConsoleGraphics(void)
 {
+	delete hStdout;
 }
 
 void ConsoleGraphics::initialize(int width, int height)
