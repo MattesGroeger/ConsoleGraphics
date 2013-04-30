@@ -9,6 +9,7 @@ public:
 private:
 	int frameWidth;
 	int frameHeight;
+	void initialize(int width, int height);
 	void setupConsoleBuffer();
 	void resetCursorPosition();
 	void setCursorPosition(int x, int y);

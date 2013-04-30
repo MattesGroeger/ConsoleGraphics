@@ -12,22 +12,24 @@ ConsoleGraphics::ConsoleGraphics(void)
 {
 	setupConsoleBuffer();
 
-	ConsoleGraphics(csbiInfo.dwSize.X, csbiInfo.dwSize.Y);
+	initialize(csbiInfo.dwSize.X, csbiInfo.dwSize.Y);
 }
 
 ConsoleGraphics::ConsoleGraphics(int width, int height)
 {
-	if (!hStdout)
-		setupConsoleBuffer();
-
-	frameWidth = width;
-	frameHeight = height;
-
-	printf("Created with size %i,%i\n", width, height);
+	setupConsoleBuffer();
+	
+	initialize(width, height);
 }
 
 ConsoleGraphics::~ConsoleGraphics(void)
 {
+}
+
+void ConsoleGraphics::initialize(int width, int height)
+{
+	frameWidth = width;
+	frameHeight = height;
 }
 
 void ConsoleGraphics::setupConsoleBuffer()
@@ -52,7 +54,7 @@ bool ConsoleGraphics::drawPoint(int x, int y)
 
 void ConsoleGraphics::resetCursorPosition()
 {
-	setCursorPosition(0, frameHeight + 1);
+	setCursorPosition(0, frameHeight - 2);
 
 	cout << endl;
 }

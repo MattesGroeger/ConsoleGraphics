@@ -12,7 +12,7 @@ void printChar(int index, char asci);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	ConsoleGraphics test(10, 10);
+	ConsoleGraphics test(80, 25);
 
 	test.drawPoint(3, 4);
 	test.drawPoint(4, 4);
