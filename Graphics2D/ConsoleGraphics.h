@@ -3,15 +3,14 @@ class ConsoleGraphics
 {
 public:
 	ConsoleGraphics(void);
-	ConsoleGraphics(int width, int height);
+	ConsoleGraphics(int, int);
 	~ConsoleGraphics(void);
-	bool drawPoint(int x, int y);
+	bool drawPoint(int, int);
 private:
-	int frameWidth;
-	int frameHeight;
-	void initialize(int width, int height);
+	int frameWidth, frameHeight;
+	void initialize(int, int);
 	void setupConsoleBuffer();
 	void resetCursorPosition();
-	void setCursorPosition(int x, int y);
+	void setCursorPosition(int, int);
 };
 
