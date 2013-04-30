@@ -37,16 +37,23 @@ void ConsoleGraphics::setupConsoleBuffer()
 {
 	hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 	GetConsoleScreenBufferInfo(hStdout, &csbiInfo);
-
-//	width = (width > 0) ? width : csbiInfo.dwSize.X;
-//	height = (height > 0) ? height : csbiInfo.dwSize.Y;
 }
 
 bool ConsoleGraphics::drawPoint(int x, int y)
 {
+	return drawCharAtPosition(char(219), x, y);
+}
+
+bool ConsoleGraphics::undrawPoint(int x, int y)
+{
+	return drawCharAtPosition(char(32), x, y);
+}
+
+bool ConsoleGraphics::drawCharAtPosition(char i, int x, int y)
+{
 	setCursorPosition(x, y);
-	
-	cout << char(219);
+
+	cout << i ;
 
 	resetCursorPosition();
 
