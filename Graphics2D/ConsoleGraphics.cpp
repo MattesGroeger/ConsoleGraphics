@@ -49,6 +49,48 @@ bool ConsoleGraphics::undrawPoint(unsigned int x, unsigned int y)
 	return drawCharAtPosition(char(32), x, y);
 }
 
+bool ConsoleGraphics::drawLine(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2)
+{
+	if (x1 == x2) // edge case: vertical lines
+	{
+		if (y1 > y2)
+		{
+			swapValues(&y1, &y2);
+		}
+
+		for (int y = y1; y <= y2; y++)
+		{
+			drawPoint(x1, y);
+		}
+
+		return true;
+	}
+	
+	if (x1 > x2) // edge case: drawing backwards
+	{
+		swapValues(&x1, &x2);
+		swapValues(&y1, &y2);
+	}
+
+	double m = (y2 - y1) / (x2 - x1);
+	double n = y1 - (m * x1);
+
+	for (int x = x1; x <= x2; x++)
+	{
+		double y = (m * x) + n;
+		drawPoint(x, y);
+	}
+
+	return true;
+}
+
+void ConsoleGraphics::swapValues(unsigned int * a, unsigned int * b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 bool ConsoleGraphics::drawCharAtPosition(char i, unsigned int x, unsigned int y)
 {
 	if (x >= frameWidth || y >= frameHeight)

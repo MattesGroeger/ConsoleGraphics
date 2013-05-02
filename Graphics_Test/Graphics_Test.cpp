@@ -27,6 +27,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	test.undrawPoint(5, 5);
 
+	test.drawLine(6, 6, 6, 1);
+
 	//ConsoleGraphics *test = new ConsoleGraphics();
 
 	// " " = 32
