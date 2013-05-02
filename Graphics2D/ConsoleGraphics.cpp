@@ -91,6 +91,16 @@ void ConsoleGraphics::swapValues(unsigned int * a, unsigned int * b)
 	*b = tmp;
 }
 
+bool ConsoleGraphics::drawRectangle(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2)
+{
+	drawLine(x1, y1, x2, y1);
+	drawLine(x2, y1, x2, y2);
+	drawLine(x2, y2, x1, y2);
+	drawLine(x1, y2, x1, y1);
+
+	return true;
+}
+
 bool ConsoleGraphics::drawCharAtPosition(char i, unsigned int x, unsigned int y)
 {
 	if (x >= frameWidth || y >= frameHeight)

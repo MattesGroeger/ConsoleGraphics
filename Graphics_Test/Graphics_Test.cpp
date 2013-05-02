@@ -29,6 +29,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	test.drawLine(6, 6, 6, 1);
 
+	test.drawRectangle(10, 1, 20, 10);
+
 	//ConsoleGraphics *test = new ConsoleGraphics();
 
 	// " " = 32

@@ -8,6 +8,7 @@ public:
 	bool drawPoint(unsigned int x, unsigned int y);
 	bool undrawPoint(unsigned int x, unsigned int y);
 	bool drawLine(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
+	bool drawRectangle(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
 private:
 	int frameWidth, frameHeight;
 	void initialize(int width, int height);
