@@ -39,24 +39,27 @@ void ConsoleGraphics::setupConsoleBuffer()
 	GetConsoleScreenBufferInfo(hStdout, &csbiInfo);
 }
 
-bool ConsoleGraphics::drawPoint(int x, int y)
+bool ConsoleGraphics::drawPoint(unsigned int x, unsigned int y)
 {
 	return drawCharAtPosition(char(219), x, y);
 }
 
-bool ConsoleGraphics::undrawPoint(int x, int y)
+bool ConsoleGraphics::undrawPoint(unsigned int x, unsigned int y)
 {
 	return drawCharAtPosition(char(32), x, y);
 }
 
-bool ConsoleGraphics::drawCharAtPosition(char i, int x, int y)
+bool ConsoleGraphics::drawCharAtPosition(char i, unsigned int x, unsigned int y)
 {
+	if (x >= frameWidth || y >= frameHeight)
+		return false;
+	
 	setCursorPosition(x, y);
 
 	cout << i ;
 
 	resetCursorPosition();
-
+	
 	return true;
 }
 
@@ -67,7 +70,7 @@ void ConsoleGraphics::resetCursorPosition()
 	cout << endl;
 }
 
-void ConsoleGraphics::setCursorPosition(int x, int y)
+void ConsoleGraphics::setCursorPosition(unsigned int x, unsigned int y)
 {
 	csbiInfo.dwCursorPosition.X = x;
 	csbiInfo.dwCursorPosition.Y = y;
